@@ -1,3 +1,3 @@
-hola este es mi primer archivo usando git 
+h0la este es mi primer archivo usando git 
 
-no se que mas decir ..............
+no se que deberia decir .............. o tal vez si
