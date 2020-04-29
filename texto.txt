@@ -1,0 +1,4 @@
+para crear un entorno virtual asignamos la ruta y ponemos el codigo "virtualenv venv"
+para activar usamos "prompt venv/bin/activate"
+Ejecutar el siguiente comando para instalar en la carpeta lib todas las librerías de Flask "pip3 install -r requirements.txt -t lib"
+ejecutar con el entorno abierto el archivo.. en este caso "main.py"
