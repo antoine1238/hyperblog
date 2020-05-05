@@ -51,7 +51,7 @@ git push <nombre del re> :refs/tags/<tag>       <elimina la referencia del tag s
 
 
 ************ Creacion de alias (atajos en codigos) *******************
-alias <nombre de atajo>=<codigo -al --que -se -le --hara --atajo>
+alias <nombre de atajo>=<codigo -al --que -se -le --hará --atajo>
 git config --global alias.<nombre de atajo> "<codigo>"
 
 
@@ -87,6 +87,9 @@ git stash pop stash@{Numero-De-Stash}             <invoca un stash en especifico
 
 ****************************Crear una rama*********************************
 git branch <branchName>
+git branch                                        <muestra las ramas existentes>
+git branch -r                                     <muestra las ramas remotas>
+git branch -a                                     <muestra todas las ramas>
 
 
 **************************Cambiar de rama**********************************
@@ -108,3 +111,9 @@ git remote -v                                      <mas detalles del origen>
 git pull origin master                             <trae la ultima version>
 git push origin master                             <envia la rama master al origen>
 git pull origin master --allow-unrelated-histories <Fuerza la union de las diferentes historias por si da error>
+
+************otros ***************
+
+git shortlog -sn --all --no-merges                 <muestra quienes y cuantos commits se han hecho en el proyecto></sin merges>
+git blame -c <archivo>                             <muestra quienes han hecho las ediciones linea por linea del archivo>
+git <comando> --help                                   <muestra en una nueva pestaña una guia para dicho codigo>        
