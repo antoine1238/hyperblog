@@ -1,0 +1,104 @@
+*******Configuración de Git*******
+git config
+git config --list
+git config --list --show origin
+git config --global
+git config --global user.name "tony"
+git config --global user.email "antoinemg1238@gmail.com"
+
+
+****Iniciar Git****
+git init
+
+
+******Agragar a la zona de preparación (staging area)******
+git add <Archivo.txt>
+git add .
+
+
+*****************Quitar de la zona de preparación (staging area)**************************
+git rm --cached <archivo.txt>
+
+
+************Ver estado*********
+git status
+
+
+************agregar a repositorio (repository area)**********************
+git commit -am "Este es mi pimer commit"
+
+
+************Ver el historial y versiones de cambios del archivo*******
+git log
+git log <Archivo.txt>
+git show-branch --all
+    git log --all --graph --decorate --oneline
+gitk                                            <muestra en un panel todos las versiones con detalles>
+
+************ Creacion de tags de versiones ***************************
+git tag -a v0.1 -m "mensaje cualquiera" <codigo de la version>
+git tag                                         <muestra los tags>
+git show-ref --tags                             <mas detalles de los tags>
+git tag -d <nombre del tag>                     <elimina el tag desde local>
+git push <nombre del re> --tags                 <mandara los tags al repositorio externo>
+git push <nombre del re> :refs/tags/<tag>       <elimina la referencia del tag seleccionado>
+
+
+************ Creacion de alias (atajos en codigos) *******************
+alias <nombre de atajo>=<codigo -al --que -se -le --hara --atajo>
+git config --global alias.<nombre de atajo> "<codigo>"
+
+
+************Muestra los cambios recientes de un archivo*********
+git show <Archivo.txt>
+
+
+************Comparar versiones**********
+git diff <version> <version>
+
+
+************************Volver a una versión anterior************************
+git reset commit --hard                          <borramos todos los cambios y lo que tengamos en staging>
+git reset commit --soft                          <soft conservamos cambios y lo que tengamos en staging>
+git checkout <version> Archivo.txt
+git checkout <rama> Archivo.txt
+
+
+**************************Ver Cambios en bytes*******************************
+git log --stat
+
+
+****************************Crear un stash*********************************
+git stash                                         <crea el stash y encapsula las ediciones>
+git stash save <mensaje>                          <le asignamos un mensaje>
+git stash list                                    <muestra la lista de stash>
+git stash pop                                     <invoca las ediciones estes donde estes>
+git stash drop                                    <elimina el stash>
+git stash branch <branchName>                     <crea y manda las ediciones a una rama nueva>
+git stash drop stash@{numero-De-Stash}            <elimina un stash especifico>
+git stash pop stash@{Numero-De-Stash}             <invoca un stash en especifico> 
+
+
+****************************Crear una rama*********************************
+git branch <branchName>
+
+
+**************************Cambiar de rama**********************************
+git checkout <branchName>
+
+
+************************Merge entre branchs************************
+git merge <branchName>                              <Estar en la rama en la que se quiere dejar la version> 
+
+git cherry-pick <codigo-del-commit>                 <nos trae un commit de una rama en especifico> </mala practica>
+
+git rebase <branchName>                             <primero hacerlo en la rama a eliminar y despues en master> </mala practica>
+
+
+************Traer un repositorio externo************
+git remote add origin <url del proyecto github>
+git remote                                         <muestra el origen remoto de nuestro git>
+git remote -v                                      <mas detalles del origen>
+git pull origin master                             <trae la ultima version>
+git push origin master                             <envia la rama master al origen>
+git pull origin master --allow-unrelated-histories <Fuerza la union de las diferentes historias por si da error>
