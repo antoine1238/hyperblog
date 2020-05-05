@@ -19,10 +19,8 @@ git add .
 *****************Quitar de la zona de preparación (staging area)**************************
 git rm --cached <archivo.txt>
 
-
 ************Ver estado*********
 git status
-
 
 ************agregar a repositorio (repository area)**********************
 git commit -am "mensaje"
@@ -31,10 +29,17 @@ git commit --amend                             <manda los cambios al commit ante
 
 ************Ver el historial y versiones de cambios del archivo*******
 git log
+git log -S "<palabra>"                         <muestra los commits con la palabra asignada puesta>
 git log <Archivo.txt>
 git show-branch --all
 git log --all --graph --decorate --oneline
-gitk                                            <muestra en un panel todos las versiones con detalles>
+gitk                                           <muestra en un panel todos las versiones con detalles>
+
+************grep (busqueda de palabra)**********************
+git grep <palabra>                             <muestra todos los usos de esa palabra dentro del proyecto>
+git grep -c <palabra>                          <muestra la veces que hay esa palabra>
+git grep -n <palabra>                          <muestra las lineas en donde se encuentra la palabra>
+
 
 ************ Creacion de tags de versiones ***************************
 git tag -a v0.1 -m "mensaje cualquiera" <codigo de la version>
