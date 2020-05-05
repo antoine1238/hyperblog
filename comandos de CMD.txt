@@ -1,0 +1,20 @@
+pwd = para saber mi ruta actual
+
+ls = para ver el contenido del la ruta
+
+cd .. = retrocede en la ruta 
+
+control + l = limpia la terminal 
+
+mkdir <nombre del proyecto> = crea una carpeta en la ruta asignada
+
+touch <texto.txt> = crea un documento vacio
+
+cat <nombre del documento> = te muestra el contenido de un documento 
+
+vim <file.txt> = permite editar ese archivo en la consola
+
+history = muestra todos los comandos realizados desde que inicio la terminal 
+<!72> en las listas usadas del history marcamos el numero del que queremos reutilizar
+
+rm <nombre del archivo> = borra el documento en cuestion....... TENER CUIDADO con el disco duro

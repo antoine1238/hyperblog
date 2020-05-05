@@ -25,14 +25,15 @@ git status
 
 
 ************agregar a repositorio (repository area)**********************
-git commit -am "Este es mi pimer commit"
+git commit -am "mensaje"
+git commit --amend                             <manda los cambios al commit anterior> </hacer solo en local... no en remotos>
 
 
 ************Ver el historial y versiones de cambios del archivo*******
 git log
 git log <Archivo.txt>
 git show-branch --all
-    git log --all --graph --decorate --oneline
+git log --all --graph --decorate --oneline
 gitk                                            <muestra en un panel todos las versiones con detalles>
 
 ************ Creacion de tags de versiones ***************************

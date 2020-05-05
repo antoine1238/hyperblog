@@ -1,0 +1,71 @@
+1 = para iniciar git lo primero que debemos hace es irnos mediante la ruta hasta donde querramos trabajar ...
+
+2 = despues empezar colocando el codigo "git init" este sera invisible pero estara activo 
+
+3 = despues podemos agregar el archivo en cuestion colocando "git add <file>" y verificarlos con "git status"
+
+4 = ya si queremos ponerlo en el repositorio/master colocamos "git commit"
+    pero con el git commit se recomienda mandar un mensaje adicional ya que es buena practica hacerlo "git commit -m "mensaje" "
+
+5 = de querer verificar si has cambiado algo dentro de ese archivo (ejem: texto) ponemos el codigo "git show <file>"
+
+6 = para querer ver las versiones anteriores del archivo colocamos "git log <file>". nos saldra un codigo mayormente numerico y de 
+    color amarillo ... 
+
+7 = para querer hacer una comparacion de versiones colocamos "git diff" y a continuación colocamos el código amarillo mayormente numerico 
+    de la version que queramos, añadimos espacio y luego el otro codigo ... esto iniciará la comparación las cuales difieren entre el color
+    verde y el rojo...
+
+8 = si queremos volver a una version anterior colocamos "git reset <codigo de version anterior> --<hard, soft>". hay varios modo de regresar a las 
+    versiones anteriores las cuales son 
+    --hard : el cual no solo regresa si no que borra las versiones antes de ella hasta llegar a la que queremos regresar...CUIDADO!
+    --soft: volvemos al estado anterior pero todo lo que estaba en staging se queda alli mismo. osea sin borrar
+
+9 = otra forma de volver a una version anterior en usando "git checkout <codigo de version anterior> <file>" de esta manera inmediatamente se
+    regresara todo a como estaba en esa version ... ya despues podemos ver que hacemos con eso 
+
+    tambien con ese codigo podemos al contrario regresarnos al mas actual usando "git checkout master <file>" y regresaremos a como estaba 
+    antes
+
+10 = con "git log --stat" podré ver los cambios en los Bytes de cada version
+
+11 = para crear una rama del master en donde querramos trabajar sin tocar al master colocamos "git branch <nombre>" y luego para moverme a 
+     esa rama usamos "git checkout <nombre>"... con ese codigo pero sin asignar nombre se puede hacer una vista de todas las ramas existentes
+
+12 = para guardar los cambios que hice de la rama creada nos posicionamos hacia donde queremos que se traiga la version y usamos 
+    "git merge <nombre>"
+
+13 = para crear un git remoto / repositorio externo. usamos "git remote add origins <url del proyecto>" 
+     "git remote -v" para comprovar 
+
+14 = para mandar el codigo de nuestra rama al "origen" creado colocamos "git pull origin master" y se nos abrira una ventana para iniciar 
+     sesion en email. lo iniciamos y luego ponemos "git push origin master" para mandar el codigo, en caso de advertencias y fallo colocar 
+    "git pull origin master --allow-unrelated-histories" el cual obligara a copiar.
+    
+15 = al igual que el comando git log que no muestra las versiones hechas del proyecto podemos colocar "git log --all --graph --decorate --oneline"
+    esto nos mostrara todas las versiones y ramas de una forma mas comprimida y legible.
+
+16 = para hacer un tag de las versiones de nuestro proyecto colocamos "git tag -a v0.1 -m "mensaje cualquiera" <codigo de la version>" y se creará 
+    para saber si existe usamos "git show-ref --tags" .. de querer eliminar el tag usamos "git tag -d <nombre del tag>" .. para subirlo al 
+    repositorio remoto "git push <nombre del re> --tags" y eliminarlo del mismo "git push <nombre del rr> :refs/tags/<tag a eliminar>"
+
+17 = para obtener el commit remoto de otro usuario o "clonar" podemos usar el codigo "git clone <url de github>" ya despues de hacer los cambios hacer el 
+    commit, git pull origin master y push origin master 
+
+18 = para hacer un pull request de un proyecto de otra persona primero tenemos que clonar el proyecto, hacer las ediciones que queremos hacerle,
+    despues agregarlo mediante el add, commit y push e nuestro remoto .. ya en github podemos hacer el pull request y esperar que acepten los cambios
+
+19 = en github al momento de querer subir al repositorio multiples documentos hay unos que no debemos dejar al descubierto como por ejemplo; claves 
+    binarios(imagenes), etc .. con lo que tenemos que crear un archivo y mandarlo al repositorio llamado ".gitignore" y una vez alli poner las
+    terminales a ignorar para que no se envien ... ejemplo;" *.jpg "
+
+20 = si queremos encapsular un dato al que aún no le hemos hecho un commit podemos hacerle un "git stash" ... por ejemplo, de querer ir a otra rama
+    pero no poder por el hecho de no haber guardado los cambios en el repositorio podemos encapsular todos los cambios por guardar usandolo. para 
+    invocar los cambios guardados usamos "stash pop" y en caso de querer eliminar todos los cambios realizados por algun motivo usamos "git stash 
+    drop". tambien podemos invocar los cambios realizados en otra rama nueva usando "git stash branch <branchName>"
+
+21 = Git sabe cual es la estructura de nuestro trabajo y si en tu local tienes archivos que no has agregado y de hecho los quieres eliminar podemos 
+    usar el codigo "git clean --dry-run" el cual mostrara los archivos a eliminar pero sin hacerlo aún (es para que los verifiques). para eliminar
+    "git clean -f" IMPORTANTE.. git solo borra los archivos, ignoras las carpetas y tambien las terminales dadas por .gitignore
+
+22 = en git hay un comando que nos permite traernos los datos de una rama y su commit en especifico y esa es "git cherry-pick <codigo- commit>"
