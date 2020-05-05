@@ -69,3 +69,9 @@
     "git clean -f" IMPORTANTE.. git solo borra los archivos, ignoras las carpetas y tambien las terminales dadas por .gitignore
 
 22 = en git hay un comando que nos permite traernos los datos de una rama y su commit en especifico y esa es "git cherry-pick <codigo- commit>"
+
+23 = en git cuando todo se arruina (ejemplo; se borran unas carpetas y documentos importantes!) hay una manera de recuperar lo perdido de una forma
+    casi magica ... se trata de el reset y el reflog .....primero mediante "git reflog" podremos ver absolutamente todo nuestros commits y ramas del
+    proyecto... entre todos los commits buscamos el ultimo head y copiamos el codigo "HEAD@{numero}" ya despues hacemos un 
+    "git reset --hard HEAD@{numero}" Esto solo nos devuelve al head anterior antes del desastre.. otra vez en reflog ahora copiamos el codigo y 
+    colocamos "git reset --hard <codigo>"  y listo todo vuelve a la normalidad ......
