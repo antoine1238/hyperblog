@@ -1,20 +1,50 @@
-pwd = para saber mi ruta actual
+-----Listar archivos:
+ls
+ls -a                      <muestra arc. ocultos>
+ls -lh                     <l: muestra fecha de creacion, lh: muestra tamaños KB,MG>
+ls -R                      <Muestra el contenido de todos los subdirectorios de forma recursiva>
+ls -S                      <Ordena los resultados por tamaño de archivo>
+ls -x                      <Ordena los archivos por extensión>
+ls -t                      <Ordena los archivos por fecha de modificación>
 
-ls = para ver el contenido del la ruta
+-----Identificar el directorio(ruta actual):
+pwd
 
-cd .. = retrocede en la ruta 
+-----Cambiar de directorio:
+cd <dir>
+cd ..                       <regresar>
+cd                          <home/antoi.DESKTOP>
 
-control + l = limpia la terminal 
+-----Crear un directorio(carpeta):
+mkdir <NombreCarpeta>       <crea una carpeta>
 
-mkdir <nombre del proyecto> = crea una carpeta en la ruta asignada
+-----crear archivo
+touch <texto.txt>           <crea un documento vacio>
 
-touch <texto.txt> = crea un documento vacio
+-----mostrar contenido de archivo:
+cat <NombreDocumento>       <te muestra el contenido de un documento> 
+head -n <numero> <NombreDocumento>      <muestra las primeras lineas o hasta donde asignes>
+tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta donde asgines>
 
-cat <nombre del documento> = te muestra el contenido de un documento 
+-----editar contenido de archivo:
+vim <file.txt>              <edita ese archivo en la consola> <":w" guardar ":q" salir>
+nano <file.txt>             <tambien edita el archivo> <"ctrl x" salir>
 
-vim <file.txt> = permite editar ese archivo en la consola
+-----Copiar un archivo:
+cp <documento> <carpeta>/   <copia y pega>
 
-history = muestra todos los comandos realizados desde que inicio la terminal 
-<!72> en las listas usadas del history marcamos el numero del que queremos reutilizar
+-----Borrar un archivo:
+rm <NombreArchivo>          <borra el archivo TENER CUIDADO>
+rmdir <NombreCarpeta>       <borra el documento>
+rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
 
-rm <nombre del archivo> = borra el documento en cuestion....... TENER CUIDADO con el disco duro
+-----Mover un archivo:
+mv ../<documento> .          <pasa de la anterior a la actual ruta>
+mv <documento> ../
+
+-----buscar palabra en archivo:
+grep "<palabra>" <archivo>
+grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
+ 
+-----otros:
+history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
