@@ -1,20 +1,43 @@
-pwd = para saber mi ruta actual
+-----Listar archivos:
+ls
+ls -a                      <muestra arc. ocultos>
+ls -lh                     <l: muestra fecha de creacion, lh: muestra tamaños KB,MG>
+ls -R                      <Muestra el contenido de todos los subdirectorios de forma recursiva>
+ls -S                      <Ordena los resultados por tamaño de archivo>
+ls -x                      <Ordena los archivos por extensión>
+ls -t                      <Ordena los archivos por fecha de modificación>
 
-ls = para ver el contenido del la ruta
+-----Identificar el directorio(ruta actual):
+pwd
 
-cd .. = retrocede en la ruta 
+-----Cambiar de directorio:
+cd <dir>
+cd ..                       <regresar>
+cd                          <home/antoi.DESKTOP>
 
-control + l = limpia la terminal 
+-----Crear un directorio(carpeta):
+mkdir <NombreCarpeta>       <crea una carpeta>
 
-mkdir <nombre del proyecto> = crea una carpeta en la ruta asignada
+-----crear archivo
+touch <texto.txt>           <crea un documento vacio>
 
-touch <texto.txt> = crea un documento vacio
-
+-----mostrar contenido de archivo:
 cat <nombre del documento> = te muestra el contenido de un documento 
 
-vim <file.txt> = permite editar ese archivo en la consola
+-----editar contenido de archivo:
+vim <file.txt>              <edita ese archivo en la consola>
 
-history = muestra todos los comandos realizados desde que inicio la terminal 
-<!72> en las listas usadas del history marcamos el numero del que queremos reutilizar
+-----Copiar un archivo:
+cp <documento> <carpeta>/   <copia y pega>
 
-rm <nombre del archivo> = borra el documento en cuestion....... TENER CUIDADO con el disco duro
+-----Borrar un archivo:
+rm <NombreArchivo>          <borra el archivo TENER CUIDADO>
+rmdir <NombreCarpeta>       <borra el documento>
+rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
+
+-----Mover un archivo:
+mv ../<documento> .          <pasa de la anterior a la actual ruta>
+mv <documento> ../
+
+-----otros:
+history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
