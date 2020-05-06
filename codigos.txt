@@ -109,11 +109,12 @@ git remote add origin <url del proyecto github>
 git remote                                         <muestra el origen remoto de nuestro git>
 git remote -v                                      <mas detalles del origen>
 git pull origin master                             <trae la ultima version>
-git push origin master                             <envia la rama master al origen>
+git push origin master                             <envia los datos de rama al origen remoto>
 git pull origin master --allow-unrelated-histories <Fuerza la union de las diferentes historias por si da error>
+git pull upstream <ramaremota>                     <para actualizar el fork hecho>
 
 ************otros ***************
 
 git shortlog -sn --all --no-merges                 <muestra quienes y cuantos commits se han hecho en el proyecto></sin merges>
 git blame -c <archivo>                             <muestra quienes han hecho las ediciones linea por linea del archivo>
-git <comando> --help                                   <muestra en una nueva pestaña una guia para dicho codigo>        
+git <comando> --help                               <muestra en una nueva pestaña una guia para dicho codigo>        

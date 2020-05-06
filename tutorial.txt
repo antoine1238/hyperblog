@@ -55,6 +55,9 @@
 18 = para hacer un pull request de un proyecto de otra persona primero tenemos que clonar el proyecto, hacer las ediciones que queremos hacerle,
     despues agregarlo mediante el add, commit y push e nuestro remoto .. ya en github podemos hacer el pull request y esperar que acepten los cambios
 
+19 = cuando el fork que le hicimos a el repositorio remoto de otro usuario esta mas actualizado que el nuestro y queremos traernos todos los cambios
+    creamos un origen nuevo "git remote add upstream <url del repositorio>" y para traerse los cambios cuando queramos usamos "git pull upstream <rama>"
+
 19 = en github al momento de querer subir al repositorio multiples documentos hay unos que no debemos dejar al descubierto como por ejemplo; claves 
     binarios(imagenes), etc .. con lo que tenemos que crear un archivo y mandarlo al repositorio llamado ".gitignore" y una vez alli poner las
     terminales a ignorar para que no se envien ... ejemplo;" *.jpg "
