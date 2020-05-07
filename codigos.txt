@@ -112,7 +112,6 @@ grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
  
 -----otros:
 history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
-erior************************
 git reset commit --hard                          <borramos todos los cambios y lo que tengamos en staging>
 git reset commit --soft                          <soft conservamos cambios y lo que tengamos en staging>
 git checkout <version> Archivo.txt
@@ -159,6 +158,7 @@ git remote                                         <muestra el origen remoto de 
 git remote -v                                      <mas detalles del origen>
 git pull origin master                             <trae la ultima version>
 git push origin master                             <envia los datos de rama al origen remoto>
+git push origin master -f                          <envia de manera forzosa los datos al remoto>
 git pull origin master --allow-unrelated-histories <Fuerza la union de las diferentes historias por si da error>
 git pull upstream <ramaremota>                     <para actualizar el fork hecho>
 
