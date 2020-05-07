@@ -1,141 +1,50 @@
-*******Configuración de Git*******
-git config
-git config --list
-git config --list --show origin
-git config --global
-git config --global user.name "tony"
-git config --global user.email "antoinemg1238@gmail.com"
+-----Listar archivos:
+ls
+ls -a                      <muestra arc. ocultos>
+ls -lh                     <l: muestra fecha de creacion, lh: muestra tamaños KB,MG>
+ls -R                      <Muestra el contenido de todos los subdirectorios de forma recursiva>
+ls -S                      <Ordena los resultados por tamaño de archivo>
+ls -x                      <Ordena los archivos por extensión>
+ls -t                      <Ordena los archivos por fecha de modificación>
 
+-----Identificar el directorio(ruta actual):
+pwd
 
-****Iniciar Git****
-git init
+-----Cambiar de directorio:
+cd <dir>
+cd ..                       <regresar>
+cd                          <home/antoi.DESKTOP>
 
+-----Crear un directorio(carpeta):
+mkdir <NombreCarpeta>       <crea una carpeta>
 
-******Agragar a la zona de preparación (staging area)******
-git add <Archivo.txt>
-git add .
-
-
-*****************Quitar de la zona de preparación (staging area)**************************
-git rm --cached <archivo.txt>
-
+-----crear archivo
+touch <texto.txt>           <crea un documento vacio>
 
 -----mostrar contenido de archivo:
-
 cat <NombreDocumento>       <te muestra el contenido de un documento> 
 head -n <numero> <NombreDocumento>      <muestra las primeras lineas o hasta donde asignes>
 tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta donde asgines>
-
 
 -----editar contenido de archivo:
 vim <file.txt>              <edita ese archivo en la consola> <":w" guardar ":q" salir>
 nano <file.txt>             <tambien edita el archivo> <"ctrl x" salir>
 
-cat <nombre del documento> = te muestra el contenido de un documento 
+-----Copiar un archivo:
+cp <documento> <carpeta>/   <copia y pega>
 
------editar contenido de archivo:
-vim <file.txt>              <edita ese archivo en la consola>
+-----Borrar un archivo:
+rm <NombreArchivo>          <borra el archivo TENER CUIDADO>
+rmdir <NombreCarpeta>       <borra el documento>
+rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
 
-
-************Ver estado*********
-git status
-
-************agregar a repositorio (repository area)**********************
-git commit -am "mensaje"
-git commit --amend                             <manda los cambios al commit anterior> </hacerlo solo en local... no en remotos>
-
-************Ver el historial y versiones de cambios del archivo*******
-git log
-git log -S "<palabra>"                         <muestra los commits con la palabra asignada puesta>
-git log <Archivo.txt>
-git show-branch --all
-git log --all --graph --decorate --oneline
-gitk                                           <muestra en un panel todos las versiones con detalles>
-
-************grep (busqueda de palabra)**********************
-git grep <palabra>                             <muestra todos los usos de esa palabra dentro del proyecto>
-git grep -c <palabra>                          <muestra la veces que hay esa palabra>
-git grep -n <palabra>                          <muestra las lineas en donde se encuentra la palabra>
-
-
-************ Creacion de tags de versiones ***************************
-git tag -a v0.1 -m "mensaje cualquiera" <codigo de la version>
-git tag                                         <muestra los tags>
-git show-ref --tags                             <mas detalles de los tags>
-git tag -d <nombre del tag>                     <elimina el tag desde local>
-git push <nombre del re> --tags                 <mandara los tags al repositorio externo>
-git push <nombre del re> :refs/tags/<tag>       <elimina la referencia del tag seleccionado>
-
-
-************ Creacion de alias (atajos en codigos) *******************
-alias <nombre de atajo>=<codigo -al --que -se -le --hará --atajo>
-git config --global alias.<nombre de atajo> "<codigo>"
-
-
-************Muestra los cambios recientes de un archivo*********
-git show <Archivo.txt>
-
-
-************Comparar versiones**********
-git diff <version> <version>
-
-
-************************Volver a una versión anterior************************
-git reset commit --hard                          <borramos todos los cambios y lo que tengamos en staging>
-git reset commit --soft                          <soft conservamos cambios y lo que tengamos en staging>
-git checkout <version> Archivo.txt
-git checkout <rama> Archivo.txt
-
-
-**************************Ver Cambios en bytes*******************************
-git log --stat
-
-
-****************************Crear un stash*********************************
-git stash                                         <crea el stash y encapsula las ediciones>
-git stash save <mensaje>                          <le asignamos un mensaje>
-git stash list                                    <muestra la lista de stash>
-git stash pop                                     <invoca las ediciones estes donde estes>
-git stash drop                                    <elimina el stash>
-git stash branch <branchName>                     <crea y manda las ediciones a una rama nueva>
-git stash drop stash@{numero-De-Stash}            <elimina un stash especifico>
-git stash pop stash@{Numero-De-Stash}             <invoca un stash en especifico> 
-
-
-****************************Crear una rama*********************************
-git branch <branchName>
-git branch                                        <muestra las ramas existentes>
-git branch -r                                     <muestra las ramas remotas>
-git branch -a                                     <muestra todas las ramas>
-
-
-**************************Cambiar de rama**********************************
-git checkout <branchName>
-
-************************Merge entre branchs************************
-git merge <branchName>                              <Estar en la rama en la que se quiere dejar la version> 
-
-git cherry-pick <codigo-del-commit>                 <nos trae un commit de una rama en especifico> </mala practica>
-
-git rebase <branchName>                             <primero hacerlo en la rama a eliminar y despues en master> </mala practica>
-
-
-************Traer un repositorio externo************
-git remote add origin <url del proyecto github>
-git remote                                         <muestra el origen remoto de nuestro git>
-git remote -v                                      <mas detalles del origen>
-git pull origin master                             <trae la ultima version>
-git push origin master                             <envia los datos de rama al origen remoto>
-git pull origin master --allow-unrelated-histories <Fuerza la union de las diferentes historias por si da error>
-git pull upstream <ramaremota>                     <para actualizar el fork hecho>
-
-************otros ***************
-
-git shortlog -sn --all --no-merges                 <muestra quienes y cuantos commits se han hecho en el proyecto></sin merges>
-git blame -c <archivo>                             <muestra quienes han hecho las ediciones linea por linea del archivo>
-git <comando> --help                               <muestra en una nueva pestaña una guia para dicho codigo>        
+-----Mover un archivo:
+mv ../<documento> .          <pasa de la anterior a la actual ruta>
+mv <documento> ../
 
 -----buscar palabra en archivo:
 grep "<palabra>" <archivo>
 grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
-
+ 
+-----otros:
+history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 

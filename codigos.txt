@@ -62,7 +62,57 @@ git show <Archivo.txt>
 git diff <version> <version>
 
 
-************************Volver a una versión anterior************************
+************************Volver a una versión an-----Listar archivos:
+ls
+ls -a                      <muestra arc. ocultos>
+ls -lh                     <l: muestra fecha de creacion, lh: muestra tamaños KB,MG>
+ls -R                      <Muestra el contenido de todos los subdirectorios de forma recursiva>
+ls -S                      <Ordena los resultados por tamaño de archivo>
+ls -x                      <Ordena los archivos por extensión>
+ls -t                      <Ordena los archivos por fecha de modificación>
+
+-----Identificar el directorio(ruta actual):
+pwd
+
+-----Cambiar de directorio:
+cd <dir>
+cd ..                       <regresar>
+cd                          <home/antoi.DESKTOP>
+
+-----Crear un directorio(carpeta):
+mkdir <NombreCarpeta>       <crea una carpeta>
+
+-----crear archivo
+touch <texto.txt>           <crea un documento vacio>
+
+-----mostrar contenido de archivo:
+cat <NombreDocumento>       <te muestra el contenido de un documento> 
+head -n <numero> <NombreDocumento>      <muestra las primeras lineas o hasta donde asignes>
+tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta donde asgines>
+
+-----editar contenido de archivo:
+vim <file.txt>              <edita ese archivo en la consola> <":w" guardar ":q" salir>
+nano <file.txt>             <tambien edita el archivo> <"ctrl x" salir>
+
+-----Copiar un archivo:
+cp <documento> <carpeta>/   <copia y pega>
+
+-----Borrar un archivo:
+rm <NombreArchivo>          <borra el archivo TENER CUIDADO>
+rmdir <NombreCarpeta>       <borra el documento>
+rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
+
+-----Mover un archivo:
+mv ../<documento> .          <pasa de la anterior a la actual ruta>
+mv <documento> ../
+
+-----buscar palabra en archivo:
+grep "<palabra>" <archivo>
+grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
+ 
+-----otros:
+history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
+erior************************
 git reset commit --hard                          <borramos todos los cambios y lo que tengamos en staging>
 git reset commit --soft                          <soft conservamos cambios y lo que tengamos en staging>
 git checkout <version> Archivo.txt
