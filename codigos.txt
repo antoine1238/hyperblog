@@ -24,7 +24,7 @@ git status
 
 ************agregar a repositorio (repository area)**********************
 git commit -am "mensaje"
-git commit --amend                             <manda los cambios al commit anterior> </hacer solo en local... no en remotos>
+git commit --amend                             <manda los cambios al commit anterior> </hacerlo solo en local... no en remotos>
 
 
 ************Ver el historial y versiones de cambios del archivo*******

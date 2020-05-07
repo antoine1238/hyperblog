@@ -22,6 +22,7 @@ mkdir <NombreCarpeta>       <crea una carpeta>
 touch <texto.txt>           <crea un documento vacio>
 
 -----mostrar contenido de archivo:
+<<<<<<< HEAD
 cat <NombreDocumento>       <te muestra el contenido de un documento> 
 head -n <numero> <NombreDocumento>      <muestra las primeras lineas o hasta donde asignes>
 tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta donde asgines>
@@ -29,6 +30,12 @@ tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta dond
 -----editar contenido de archivo:
 vim <file.txt>              <edita ese archivo en la consola> <":w" guardar ":q" salir>
 nano <file.txt>             <tambien edita el archivo> <"ctrl x" salir>
+=======
+cat <nombre del documento> = te muestra el contenido de un documento 
+
+-----editar contenido de archivo:
+vim <file.txt>              <edita ese archivo en la consola>
+>>>>>>> bd5ee937b1d0303002dc8150b83c78de0ddeb256
 
 -----Copiar un archivo:
 cp <documento> <carpeta>/   <copia y pega>
@@ -42,9 +49,12 @@ rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
 mv ../<documento> .          <pasa de la anterior a la actual ruta>
 mv <documento> ../
 
+<<<<<<< HEAD
 -----buscar palabra en archivo:
 grep "<palabra>" <archivo>
 grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
  
+=======
+>>>>>>> bd5ee937b1d0303002dc8150b83c78de0ddeb256
 -----otros:
 history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
