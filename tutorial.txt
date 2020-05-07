@@ -79,6 +79,9 @@
     "git reset --hard HEAD@{numero}" Esto solo nos devuelve al head anterior antes del desastre.. otra vez en reflog ahora copiamos el codigo y 
     colocamos "git reset --hard <codigo>"  y listo todo vuelve a la normalidad ......       
 
+23 = si lo que queremos es eliminar en remoto algún archivo de alli que no querramos tenemos que primero hacer un reset --hard <codigo>
+    a la version que estaba sana y luego usar el codigo "git commit origin master -f" que pasará de manera forzosa los datos actuales al repositorio
+    
 24 = para buscar palabras especificas dentro de todo nuestro proyecto que nos ayuden a hacer mas rapido su busqueda podemos usar "git grep <palabra>"
     o si queremos ver en que linea del archivo se muestra "git grep -n <palabra>".. para ver cuantas veces es mencionada la palabra usamos 
     "git grep -c <palabra>" ..IMPORTANTE... para buscar codigo usamos, ejemplo; "<p>" 
