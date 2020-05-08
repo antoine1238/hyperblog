@@ -6,6 +6,7 @@ ls -R                      <Muestra el contenido de todos los subdirectorios de 
 ls -S                      <Ordena los resultados por tamaño de archivo>
 ls -x                      <Ordena los archivos por extensión>
 ls -t                      <Ordena los archivos por fecha de modificación>
+ls |more                   <muestra linea por linea ordenadamente>
 
 -----Identificar el directorio(ruta actual):
 pwd
@@ -22,7 +23,8 @@ mkdir <NombreCarpeta>       <crea una carpeta>
 touch <texto.txt>           <crea un documento vacio>
 
 -----mostrar contenido de archivo:
-cat <NombreDocumento>       <te muestra el contenido de un documento> 
+cat <NombreDocumento>                   <te muestra el contenido de un documento> 
+cat <NombreDocumento> |wc               <Muestra numero de lineas/palabras/caracteres en ese orden>
 head -n <numero> <NombreDocumento>      <muestra las primeras lineas o hasta donde asignes>
 tail -n <numero> <NombreDocumento>      <muestra las ultimas lineas o hasta donde asgines>
 
@@ -42,9 +44,49 @@ rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
 mv ../<documento> .          <pasa de la anterior a la actual ruta>
 mv <documento> ../
 
+-----Comprimir un archivo / agrupar archivos 
+gzip                         <comprime el archivo>
+gzip -d                      <descomprime el archivo>
+
+tar cf <nuevo.tar> <carpeta>    <agrupa todo lo que esta en carpeta y se lo lleva a un archivo comprimido con sus datos dentro> <cf = create file>
+tar tf <archivo.tar>            <muestra el contenido del archivo comprimido>
+tar xf <archivo.tar>            <desagrupa el contenido del archivo comprimido>
+
+tar cfz <nuevo.tgz> <carpeta>   <agrupa todo lo que esta en carpeta y se lo lleva a un archivo comprimido con sus datos dentro>
+tar xzf <archivo.tgz>           <desagrupa el contenido del archivo y lo descomprime>
+
 -----buscar palabra en archivo:
 grep "<palabra>" <archivo>
-grep -i "<palabra>" <archivo>  <"-i" para mostrar minuscula-mayuscula>
- 
+grep -i "<palabra>" <archivo>                         <"-i" para mostrar minuscula-mayuscula>
+
+sed "s/palabra/cambio/" <archivo>                     <para cambiar todas las "palabra" que esten en el archivo por "cambio">
+sed "s/palabra/palabra/" "s/cambio/cambio/" <archivo>
+
+----- atajos en escritura y lectura y creacion
+<comando> > <NombreArchivo>                   <esto crea e ingresa todo el resultado del codigo en el archivo> <si no es nuevo reemplaza datos>
+<comando> >> <NombreArchivo>                  <esto añade datos debajo de los datos existentes dentro del archivo>
+cat file > NewFile                            <en este caso pude copiar el contenido>
+history | grep <comando>                      <mostrara solo el comando establecido>
+head -n <numero> <archivo> > <NuevoArchivo>   <crea un archivo dependiendo del numero de lineas que le querramos poner>
+
+-----ejecuciones y segundo plano
+<comando> &   /   ctrl + z                    <ejecuta el comando en segundo plano> <otra forma de hacer lo mismo>
+fg                                            <trae un comando que se este ejecutando en segundo plano>
+ps                                            <muestra los procesos que se estan ejecutando>
+ps -ax                                        <muestra los procesos que se estan ejecutando del sistema>
+top                                           <muestra  como los procesos van cambiando en tiempo real, con la letra q se sale>
+kill -<NumeroPrioridad> <NumeroProceso>       <termina el proceso con la identificacion del numero del proceso, eje: kill -9 12345
+                                                9 es la maxima prioridad y termina el proceso inmediatamente>
+killall -<NumeroPrioridad> <NumeroEjecutable> <termina el proceso del ejecutable. eje: killall -9 "colgado.py"> 
+
+-----permisos sobre archivos
+chmod                                         <nos cambia el modo del archivo, cambia individualmente los permisos>
+chown                                         <cambia quien es el usuario ese archivo>
+chgrp                                         <quien es el grupo de usuarios que puede acceder al achivo>
+ejem: chmod 760 texto.txt                     <Son 3 posiciones. dueño, grupo, otros.. 4= permisos lectura 6=lectura y escritura 
+                                               7=lectura, escritura ejecucion> <ejem: 7=dueño 6=grupo 0=otros>
+
 -----otros:
-history/<!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
+history / <!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
+<comando> |more                <muestra linea por linea ordenadamente> < | = alt + 124>
+ctrl + c                       <interrumpe procesos>
