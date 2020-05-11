@@ -55,6 +55,23 @@ tar xf <archivo.tar>            <desagrupa el contenido del archivo comprimido>
 tar cfz <nuevo.tgz> <carpeta>   <agrupa todo lo que esta en carpeta y se lo lleva a un archivo comprimido con sus datos dentro>
 tar xzf <archivo.tgz>           <desagrupa el contenido del archivo y lo descomprime>
 
+-----busqueda de archivo:
+find <palabra>
+whereis <comando buscado>   
+locate <palabra>
+
+-----alias (atajos en codigo)
+alias <NombreAlias>=<codigo>
+
+-----modo root
+sudo -i
+
+-----tareas programadas
+at                              <ejemplos: at now +2 minutes ----- echo "hola mundo" > /home/antoine/antoine> >en dos minutos se hará esa funcion>
+cront                         
+crontab -e                      <para crear una tareas programadas> <ejem: min. hor. * * * (comando)> 
+sudo service atd start          <por si da error y no quiere iniciar>
+
 -----buscar palabra en archivo:
 grep "<palabra>" <archivo>
 grep -i "<palabra>" <archivo>                         <"-i" para mostrar minuscula-mayuscula>
@@ -79,6 +96,15 @@ kill -<NumeroPrioridad> <NumeroProceso>       <termina el proceso con la identif
                                                 9 es la maxima prioridad y termina el proceso inmediatamente>
 killall -<NumeroPrioridad> <NumeroEjecutable> <termina el proceso del ejecutable. eje: killall -9 "colgado.py"> 
 
+-----interacciones a través de http
+curl <http://url.com>                         <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve el
+                                               html del servidor>
+curl -v <http://url.com>                      <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve el
+                                               html del servidor y toda la comunicacion http>
+curl -v <http://url.com> > dev/null           <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve 
+                                               toda la informacion de encabezados>
+wget <http://url.com>                         <sirve para realizar descargar desde servidores http archivos binarios>
+
 -----permisos sobre archivos
 chmod                                         <nos cambia el modo del archivo, cambia individualmente los permisos>
 chown                                         <cambia quien es el usuario ese archivo>
@@ -90,3 +116,4 @@ ejem: chmod 760 texto.txt                     <Son 3 posiciones. dueño, grupo, 
 history / <!x>                 <muestra todos los comandos realizados desde que se ejecutó la consola> 
 <comando> |more                <muestra linea por linea ordenadamente> < | = alt + 124>
 ctrl + c                       <interrumpe procesos>
+sudo apt update                <actualiza la lista de paquetes disponibles y sus versiones> 
