@@ -39,6 +39,7 @@ cp <documento> <carpeta>/   <copia y pega>
 rm <NombreArchivo>          <borra el archivo TENER CUIDADO>
 rmdir <NombreCarpeta>       <borra el documento>
 rm -rf <nombre de carpeta>  <r: borrado de contenido, f: borrado forzoso>
+unlink <FileName>           <permite borrar solo un archivo>
 
 -----Mover un archivo:
 mv ../<documento> .          <pasa de la anterior a la actual ruta>
@@ -48,9 +49,9 @@ mv <documento> ../
 gzip                         <comprime el archivo>
 gzip -d                      <descomprime el archivo>
 
-tar cf <nuevo.tar> <carpeta>    <agrupa todo lo que esta en carpeta y se lo lleva a un archivo comprimido con sus datos dentro> <cf = create file>
-tar tf <archivo.tar>            <muestra el contenido del archivo comprimido>
-tar xf <archivo.tar>            <desagrupa el contenido del archivo comprimido>
+tar cf <nuevo.tar> <carpeta>    <agrupa todo lo que esta en carpeta y se lo lleva con sus datos dentro> <cf = create file>
+tar tf <archivo.tar>            <muestra el contenido del archivo>
+tar xf <archivo.tar>            <desagrupa el contenido del archivo>
 
 tar cfz <nuevo.tgz> <carpeta>   <agrupa todo lo que esta en carpeta y se lo lleva a un archivo comprimido con sus datos dentro>
 tar xzf <archivo.tgz>           <desagrupa el contenido del archivo y lo descomprime>
@@ -97,12 +98,14 @@ kill -<NumeroPrioridad> <NumeroProceso>       <termina el proceso con la identif
 killall -<NumeroPrioridad> <NumeroEjecutable> <termina el proceso del ejecutable. eje: killall -9 "colgado.py"> 
 
 -----interacciones a través de http
-curl <http://url.com>                         <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve el
-                                               html del servidor>
+curl <http://url.com>                         <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. "nos devuelve el
+                                               html del servidor">
 curl -v <http://url.com>                      <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve el
                                                html del servidor y toda la comunicacion http>
-curl -v <http://url.com> > dev/null           <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve 
+curl -v <http://url.com> > <file>             <sirve para hace pedidos (Crudos) a traves de servidores http desde su url. nos devuelve 
                                                toda la informacion de encabezados>
+curl -o <http://url.com>/<file1> -o <http://url.com>/<file2>              <para descargar varios html>
+
 wget <http://url.com>                         <sirve para realizar descargar desde servidores http archivos binarios>
 
 -----permisos sobre archivos
